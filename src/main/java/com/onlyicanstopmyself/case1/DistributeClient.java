@@ -31,7 +31,7 @@ public class DistributeClient {
     }
 
     private void getServerList() throws InterruptedException, KeeperException {
-        //这里获取的child是每个节点的名字
+        //这里获取的child是每个节点的名字    getChildren创建就会有一次监视器被创建  watch true
         List<String> children = zk.getChildren("/servers", true);
         List<String> serversData = new ArrayList<>();
 
